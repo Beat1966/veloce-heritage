@@ -1,0 +1,8 @@
+# Cloudflare Pages headers (equivalent of vercel.json)
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Robots-Tag: noindex, nofollow, noarchive, noimageindex, noai, noimageai
+
+/images/*
+  Cache-Control: public, max-age=604800

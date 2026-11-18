@@ -18,3 +18,8 @@ Statische Website (HTML, CSS, JavaScript) ohne Build-Schritt. Läuft direkt auf 
 
 ## Lokal ansehen
 `npx serve .` oder `python3 -m http.server` im Ordner starten.
+
+## Cloudflare Pages (veloceheritage.com)
+- Build command: `exit 0`, Build output directory: leer lassen (Root).
+- `_headers` übernimmt die Header aus `vercel.json` (inkl. vorläufiger noindex-Sperre).
+- Go-live: `robots.txt` löschen, noindex aus `index.html`, `_headers` und `vercel.json` entfernen.
