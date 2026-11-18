@@ -1,4 +1,4 @@
-# Cloudflare Pages headers (equivalent of vercel.json)
+# Cloudflare Pages headers
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

@@ -1,25 +1,24 @@
-# VELOCE heritage – Website v1
+# VELOCE heritage – Website
 
-Statische Website (HTML, CSS, JavaScript) ohne Build-Schritt. Läuft direkt auf Vercel.
+Statische Website (HTML, CSS, JavaScript) ohne Build-Schritt. Läuft auf Cloudflare Pages unter **veloceheritage.com**.
 
 ## Dateien
 - `index.html` – gesamte Seite (One-Pager mit Ankern)
 - `styles.css` – Design
 - `script.js` – Mobile-Menü und Anfrageformular (öffnet E-Mail an b.sutter@me.com)
-- `images/` – Fotos (aktuell aus den Google-Sites-Screenshots ausgeschnitten → durch Originale in hoher Auflösung ersetzen, gleiche Dateinamen)
-- `vercel.json` – Caching- und Sicherheits-Header
+- `images/` – Fotos
+- `_headers` – Caching- und Sicherheits-Header für Cloudflare Pages
+- `robots.txt` – vorläufige Sperre für Suchmaschinen und KI-Bots
 
 ## Veröffentlichen
-1. Alle Dateien ins Repo `Beat1966/veloce-heritage` (Branch `main`) hochladen.
-2. Auf vercel.com → Add New → Project → Repo importieren.
-3. Framework Preset: **Other**, Build Command leer, Output Directory leer → Deploy.
-4. Danach ist die Seite unter `veloce-heritage.vercel.app` erreichbar. Jeder Push auf `main` aktualisiert sie automatisch.
-5. Eigene Domain später unter Project → Settings → Domains hinzufügen.
+- GitHub-Repo `Beat1966/veloce-heritage`, Branch `main`.
+- Cloudflare Pages ist mit dem Repo verbunden: Jeder Push auf `main` aktualisiert veloceheritage.com automatisch.
+- Pages-Einstellungen: Build command `exit 0`, Build output directory leer lassen (Root).
 
 ## Lokal ansehen
 `npx serve .` oder `python3 -m http.server` im Ordner starten.
 
-## Cloudflare Pages (veloceheritage.com)
-- Build command: `exit 0`, Build output directory: leer lassen (Root).
-- `_headers` übernimmt die Header aus `vercel.json` (inkl. vorläufiger noindex-Sperre).
-- Go-live: `robots.txt` löschen, noindex aus `index.html`, `_headers` und `vercel.json` entfernen.
+## Go-live (Sperre aufheben)
+1. `robots.txt` löschen.
+2. `<meta name="robots" ...>` aus `index.html` entfernen.
+3. Zeile `X-Robots-Tag` aus `_headers` entfernen.
